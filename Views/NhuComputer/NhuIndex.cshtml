@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Nhu_211242485_de01.Models.Computer>
+    @{
+    ViewData["Title"] = "Computer List";
+    }
+    <h1>Computer List</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Create New Computer</a>
+    </p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NhuComId</td>
+                <td>@item.NhuComName</td>
+                <td>@item.Author</td>
+                <td>@String.Format("{0:N0} đ", item.NhuPrice)</td>
+                <td>@item.NhuComStatus</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.NhuImage))
+                    {
+                    <img src="@item.NhuImage" width="60" height="80" />
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.NhuComId" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.NhuComId" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.NhuComId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>

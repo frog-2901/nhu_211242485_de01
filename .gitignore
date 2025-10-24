@@ -1,0 +1,36 @@
+## Build results
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio files
+.vs/
+*.dbmdl
+*.bak
+
+## Rider / JetBrains
+.idea/
+
+## ASP.NET Core
+appsettings.Development.json
+
+## npm & LibMan
+node_modules/
+libman.json
+wwwroot/lib/
+
+## Others
+*.swp
+*.tmp
+*.temp
